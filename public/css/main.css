@@ -4,3 +4,53 @@
     display: none; 
 }
 
+body {
+    background-image: url('/images/pokemon-background.png');
+    background-repeat: repeat-x repeat-y;
+    background-size: 1100px 744.7px;
+}
+
+/* navbar */
+/* ----------------------------------------------------------------- */
+.pixel-font {
+    font-family: 'Press Start 2P', cursive;
+}
+
+#main-navbar {
+    background: #3BB9FF;
+    border-bottom: 3px solid #F70D1A;
+}
+
+#main-navbar a {
+    color: #F70D1A;
+    font-family: 'Fugaz One', cursive;
+    font-size: 1.3em; 
+    text-align: center;
+}
+
+button.navbar-toggler {
+    border: none;
+}
+
+#menu-btn {
+    color: #F70D1A;
+}
+
+/* footer */
+/* ----------------------------------------------------------------- */
+
+.footer {
+    background: #3BB9FF;
+    color: #F70D1A;
+    border-top: 3px solid #F70D1A;
+    height: 30px;
+    text-align: center;
+    position: absolute;;
+    bottom: 0;
+    display: block;
+    width: 100%;
+}
+
+.footer p {
+    margin-bottom: 0;
+} 

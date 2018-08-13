@@ -8,7 +8,7 @@
     <title>Pokemon Battle Arena</title>
 
     {{!-- google fonts --}}
-    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P|Fugaz+One" rel="stylesheet">
     {{!-- font awesome --}}
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
@@ -18,9 +18,29 @@
 
 </head>
 <body>
+    <nav class="navbar navbar-expand-md navbar-light" id='main-navbar'>
+        <a class="navbar-brand" href="/">
+            <img src="/images/pokeball-symbol.png" width="40" height="40" class="d-inline-block align-middle" alt="">
+            Pokemon Arena
+        </a>
+        <button class="navbar-toggler" id='menu-btn' type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span><i class="fas fa-bars"></i></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto" id="main-navbar-links">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/pokedex">Pokedex</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
     <div class='container-fluid'>
         {{{body}}}
+    </div>
+
+    <div class='footer'>
+        <p>©2018 Evan Tucker</p>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="crossorigin="anonymous"></script>
