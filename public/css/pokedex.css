@@ -1,3 +1,42 @@
 
 /* pokedex styles */
 /* --------------------------------------------------------------- */
+
+#pokedex-row {
+    margin-top: 30px;
+}
+
+#pokedex-container {
+    
+}
+
+.pokedex-box {
+    width: 800px;
+}
+
+.search-box {
+    background: #3BB9FF;
+}
+
+.small-pokedex {
+    display: none;
+}
+
+.large-pokedex {
+
+}
+
+#info-container {
+
+}
+
+
+@media (max-width: 800px) {
+    .small-pokedex {
+        /* display: block; */
+    }
+
+    .large-pokedex {
+        display: none;
+    }
+}

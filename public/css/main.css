@@ -45,8 +45,8 @@ button.navbar-toggler {
     border-top: 3px solid #F70D1A;
     height: 30px;
     text-align: center;
-    position: absolute;;
-    bottom: 0;
+    position: relative;
+    bottom: -100px;
     display: block;
     width: 100%;
 }
