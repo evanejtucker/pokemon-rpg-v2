@@ -92,6 +92,38 @@
     border: 2px solid black;
 }
 
+.id-screen {
+    position: absolute;
+}
+
+.pokeId {
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin: 0 auto;
+    color: red;
+}
+
+#small-id-screen {
+    bottom: 472px;
+    left: 103px;
+    height: 51px;
+    width: 94px;
+    border-top-left-radius: 47px;
+    border-top-right-radius: 47px;
+}
+
+#large-id-screen {
+    background: #fbfb05;
+    bottom: 49px;
+    left: 88px;
+    height: 57px;
+    width: 122px;
+    border-radius: 7px;
+    border: 2px solid black;
+}
+
 .pokeImage {
     width: 170px;
     height: 170px;

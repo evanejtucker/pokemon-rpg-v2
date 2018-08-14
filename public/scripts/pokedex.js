@@ -9,6 +9,7 @@ var allPokemon = [];
 
     // hits the api and returns a list of every pokemom, also adds the names to the datalist
     var getAllPokemon = function() {
+        console.log('getting pokemon...')
         allPokemon = [];
         var queryUrl = '/api/pokemon/all';
         $.get({
@@ -73,11 +74,18 @@ var allPokemon = [];
 
     var updatePokedex = function(pokeObject) {
 
+        // add pokemon image
         var pokeImage = $('<img>');
         pokeImage.attr('src', pokeObject.sprites.front_default);
         pokeImage.attr('alt', pokeObject.name);
         pokeImage.addClass('pokeImage');
         $('.main-screen').html(pokeImage);
+
+        // add pokemon ID
+        pokeId = $('<div>');
+        pokeId.text(pokeObject.id);
+        pokeId.addClass('pokeId');
+        $('.id-screen').html(pokeId);
     }
 
     
