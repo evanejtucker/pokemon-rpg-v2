@@ -22,8 +22,7 @@ module.exports = (app, request)=> {
         });
     });
 
-    app.get('/api/pokemon/all/', (req, res, next)=> {
-        console.log("parameter: " + req.params);
+    app.get('/api/pokemon/all', (req, res, next)=> {
         var pokemon;
         var queryUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=949';
         console.log(queryUrl);
