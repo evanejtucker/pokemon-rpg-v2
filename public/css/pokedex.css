@@ -92,7 +92,7 @@
     border: 2px solid black;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
     .small-pokedex {
         display: block;
     }
