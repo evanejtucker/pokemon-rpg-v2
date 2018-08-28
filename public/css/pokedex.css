@@ -132,6 +132,29 @@
     margin: 0 auto;
 }
 
+.pokeName {
+    position: absolute;
+    text-align: center;
+    padding-top: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
+    font-size: 1.2em;
+}
+
+#large-pokeName {
+    width: 240px;
+    height: auto;
+    top: 0;
+    left: 0;
+}
+
+#small-pokeName {
+    width: 278px;
+    height: auto;
+    top: 0;
+    left: 1px;
+}
+
 @media (max-width: 1000px) {
     .small-pokedex {
         display: block;

@@ -83,6 +83,7 @@ var allPokemon = [];
 
     var updatePokedex = function(pokeObject) {
         $('.main-screen').html('');
+        $('.secondary-screen').html('');
         // add pokemon image
         var pokeImage = $('<img>');
         pokeImage.attr('src', pokeObject.sprites.front_default);
@@ -95,6 +96,9 @@ var allPokemon = [];
         pokeId.text(pokeObject.id);
         pokeId.addClass('pokeId');
         $('.id-screen').html(pokeId);
+
+        // add pokemon Name
+        $('.pokeName').text(pokeObject.name);
     }
 
     
