@@ -35,7 +35,7 @@ var allPokemon = [];
 
     // hits the backend api and returns one pokemon object
     var searchPokemon = function(searchTerm) {
-        resetDex();
+        // resetDex();
         var queryUrl = '/api/pokemon/name/' + searchTerm + '/';
         $.get({
             url: queryUrl,
@@ -74,8 +74,11 @@ var allPokemon = [];
     }
 
     var resetDex = function() {
-        $('img.pokeImage').attr('src', 'images/loading-bulbasaur.gif');
-
+        // add loading gif before search results appear
+        var loadingImage = $("<img>")
+        loadingImage.addClass('pokeImage');
+        loadingImage.attr('src', 'images/loading-bulbasaur.gif');
+        $('.main-screen').html(loadingImage);
     }
 
     var updatePokedex = function(pokeObject) {
@@ -105,6 +108,7 @@ var allPokemon = [];
     $('#pokemonSubmit').on('click', function() {
         event.preventDefault();
         var searchTerm = $('#pokemonSearch').val();
+        resetDex();
         searchPokemon(searchTerm);
     });
 
