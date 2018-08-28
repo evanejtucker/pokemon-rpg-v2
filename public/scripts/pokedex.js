@@ -79,11 +79,14 @@ var allPokemon = [];
         loadingImage.addClass('pokeImage');
         loadingImage.attr('src', 'images/loading-bulbasaur.gif');
         $('.main-screen').html(loadingImage);
+
+        // clear pokemon name
+        $('.pokeName').html('');
     }
 
     var updatePokedex = function(pokeObject) {
         $('.main-screen').html('');
-        $('.secondary-screen').html('');
+        // $('.secondary-screen').html('');
         // add pokemon image
         var pokeImage = $('<img>');
         pokeImage.attr('src', pokeObject.sprites.front_default);
@@ -98,7 +101,7 @@ var allPokemon = [];
         $('.id-screen').html(pokeId);
 
         // add pokemon Name
-        $('.pokeName').text(pokeObject.name);
+        $('.pokeName').html(pokeObject.name);
     }
 
     
