@@ -174,6 +174,42 @@
     left: 1px;
 }
 
+.pokeType {
+    position: absolute;
+    background-size: cover;
+}
+
+.large-pokeType {
+    height: 49px;
+    width: 107px;
+    bottom: 50px;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+#large-pokeType-1 {
+    left: 451px;
+}
+
+#large-pokeType-2 {
+    left: 578px;
+}
+
+.small-pokeType {
+    height: 45px;
+    width: 120px;
+    bottom: 145px;
+    border-radius: 5px;
+}
+
+#small-pokeType-1 {
+    left: 20px;
+}
+
+#small-pokeType-2 {
+    left: 160px;
+}
+
 @media (max-width: 1000px) {
     .small-pokedex {
         display: block;

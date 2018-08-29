@@ -115,6 +115,11 @@ var allPokemon = [];
         var pokeHeight = $('<td>').text('weight: ' + pokeObject.weight);
         newTRow.append(pokeWeight, pokeHeight);
         $('.pokeDataTable').append(newTRow);
+
+        // add pokeTypes
+        // console.log(getPokeType(pokeObject));
+        $('.pokeType-1').css('background-image', "url('/images/type-symbols/"+ getPokeType(pokeObject)[0] +"-type.png')");
+        $('.pokeType-2').css('background-image', "url('/images/type-symbols/"+ getPokeType(pokeObject)[1] +"-type.png')");
     }
 
     // if the Id is longer than 3 digits,
@@ -139,13 +144,26 @@ var allPokemon = [];
         $('.pokeName').html("No Results Found");
     }
 
+    // returns an array of all the searched pokemons types
+    var getPokeType = function(pokeObject) {
+        var types = []
+        console.log(pokeObject.types);
+        for (var i=0; i<pokeObject.types.length; i++) {
+            types.push(pokeObject.types[i].type.name);
+        }
+        if (types.length === 1) {
+            types.push(types[0]);
+        }
+        return types;
+    }
+
     
 
 
 // Main Process
 // -----------------------------------------------------------------------------------
     
-    getAllPokemon();    
+    // getAllPokemon();    
 
     $('#pokemonSubmit').on('click', function() {
         event.preventDefault();
