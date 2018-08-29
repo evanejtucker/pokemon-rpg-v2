@@ -85,7 +85,7 @@ var allPokemon = [];
         $('.main-screen').html(loadingImage);
 
         // clear pokemon name
-        $('.pokeName').html('');
+        $('.pokeName').html('Loading...');
         // clear height and weight
         $('.pokeDataTable').html('')
         // clear id
@@ -96,7 +96,6 @@ var allPokemon = [];
 
         $('.main-screen').html('');
         $('#large-main-screen').css('background-image', "url('/images/pokedex-backgrounds/search-background.png')")
-
         // add pokemon image
         var pokeImage = $('<img>');
         pokeImage.attr('src', pokeObject.sprites.front_default);
@@ -189,7 +188,7 @@ var allPokemon = [];
 // Main Process
 // -----------------------------------------------------------------------------------
     
-    // getAllPokemon();    
+    getAllPokemon();    
 
     $('#pokemonSubmit').on('click', function() {
         event.preventDefault();
