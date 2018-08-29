@@ -35,7 +35,7 @@ var allPokemon = [];
 
     // hits the backend api and returns one pokemon object
     var searchPokemon = function(searchTerm) {
-        // resetDex();
+        resetDex();
         var queryUrl = '/api/pokemon/name/' + searchTerm + '/';
         $.get({
             url: queryUrl,
@@ -76,7 +76,7 @@ var allPokemon = [];
 
     var resetDex = function() {
 
-        $('.main-screen').css('background-image', "url('/images/pokedex-backgrounds/grass-background.png')");
+        $('#large-main-screen').css('background-image', "url('/images/pokedex-backgrounds/grass-background.png')");
 
         // add loading gif before search results appear
         var loadingImage = $("<img>")
@@ -95,7 +95,7 @@ var allPokemon = [];
     var updatePokedex = function(pokeObject) {
 
         $('.main-screen').html('');
-        $('.main-screen').css('background-image', "url('/images/pokedex-backgrounds/search-background.png')")
+        $('#large-main-screen').css('background-image', "url('/images/pokedex-backgrounds/search-background.png')")
 
         // add pokemon image
         var pokeImage = $('<img>');
@@ -160,6 +160,29 @@ var allPokemon = [];
         return types;
     }
 
+    // cycle through pokemon index's and updates the pokedex
+    function cyclePokemon(cycleDirection, currentId) {
+
+        if (!currentId) {
+            currentId = 0;
+        }
+
+        if(cycleDirection === 'prev') {
+            newId = parseInt(currentId) - 1;
+            if (newId === -1  || newId === 0) {
+                newId = 802;
+            }
+            searchPokemon(newId);
+        } else if (cycleDirection === 'next') {
+            newId = parseInt(currentId) + 1;
+            if (newId === 803) {
+                newId = 1;
+            }
+            searchPokemon(newId);
+        }
+        
+    }
+
     
 
 
@@ -179,6 +202,12 @@ var allPokemon = [];
         var inputLength = $(this).val().length;
         addDataList(inputLength);
     });
+
+    $('.cycleBtn').on('click', function() {
+        var direction = $(this).attr('direction');
+        var id = $('.pokeId').html();
+        cyclePokemon(direction, id);
+    })
 
 // $(document).ready closing tag
 });

@@ -176,7 +176,7 @@
 
 .pokeType {
     position: absolute;
-    background-size: contain;
+    background-size: cover;
 }
 
 .large-pokeType {
@@ -209,6 +209,56 @@
 #small-pokeType-2 {
     left: 160px;
 }
+
+.cycleBtn {
+    position: absolute;
+    /* border: 1px solid red;    */
+}
+
+.small-cycleBtn {
+    width: 48px;
+    height: 52px;
+    bottom: 92px;
+    text-align: center;
+    line-height: 35px;
+    font-size: 1.2em;
+}
+
+.small-cycleBtn:hover {
+    background: whitesmoke;
+}
+
+#small-prevCycle {
+    left: 103px;
+    border-radius: 0px 0px 0px 48px;
+}
+
+#small-nextCycle {
+    left: 151px;
+    border-radius: 0px 0px 48px 0px;
+}
+
+.large-cycleBtn {
+    width: 31px;
+    height: 30px;
+    bottom: 127px;
+    border-radius: 3px;
+    /* border: 1px solid red; */
+}
+
+.large-cycleBtn:hover {
+    border: 2px solid whitesmoke;
+}
+
+#large-prevCycle {
+    left: 474px;
+}
+
+#large-nextCycle {
+    left: 509px;
+}
+
+
 
 @media (max-width: 1000px) {
     .small-pokedex {
