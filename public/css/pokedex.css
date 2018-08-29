@@ -176,7 +176,7 @@
 
 .pokeType {
     position: absolute;
-    background-size: cover;
+    background-size: contain;
 }
 
 .large-pokeType {

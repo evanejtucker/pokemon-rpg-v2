@@ -75,6 +75,9 @@ var allPokemon = [];
     }
 
     var resetDex = function() {
+
+        $('.main-screen').css('background-image', "url('/images/pokedex-backgrounds/grass-background.png')");
+
         // add loading gif before search results appear
         var loadingImage = $("<img>")
         loadingImage.addClass('pokeImage');
@@ -92,6 +95,8 @@ var allPokemon = [];
     var updatePokedex = function(pokeObject) {
 
         $('.main-screen').html('');
+        $('.main-screen').css('background-image', "url('/images/pokedex-backgrounds/search-background.png')")
+
         // add pokemon image
         var pokeImage = $('<img>');
         pokeImage.attr('src', pokeObject.sprites.front_default);
@@ -117,7 +122,6 @@ var allPokemon = [];
         $('.pokeDataTable').append(newTRow);
 
         // add pokeTypes
-        // console.log(getPokeType(pokeObject));
         $('.pokeType-1').css('background-image', "url('/images/type-symbols/"+ getPokeType(pokeObject)[0] +"-type.png')");
         $('.pokeType-2').css('background-image', "url('/images/type-symbols/"+ getPokeType(pokeObject)[1] +"-type.png')");
     }
@@ -147,7 +151,6 @@ var allPokemon = [];
     // returns an array of all the searched pokemons types
     var getPokeType = function(pokeObject) {
         var types = []
-        console.log(pokeObject.types);
         for (var i=0; i<pokeObject.types.length; i++) {
             types.push(pokeObject.types[i].type.name);
         }
