@@ -47,6 +47,7 @@ var allPokemon = [];
         }).done(function(data) {
             // if the data retuns 'error', exit the function
             if (data === "error") {
+                noResults();
                 return console.log('no reuslts found');
             } else {
                 console.log(data);
@@ -82,11 +83,15 @@ var allPokemon = [];
 
         // clear pokemon name
         $('.pokeName').html('');
+        // clear height and weight
+        $('.pokeDataTable').html('')
+        // clear id
+        $('.pokeId').html('');
     }
 
     var updatePokedex = function(pokeObject) {
+
         $('.main-screen').html('');
-        // $('.secondary-screen').html('');
         // add pokemon image
         var pokeImage = $('<img>');
         pokeImage.attr('src', pokeObject.sprites.front_default);
@@ -99,9 +104,39 @@ var allPokemon = [];
         pokeId.text(pokeObject.id);
         pokeId.addClass('pokeId');
         $('.id-screen').html(pokeId);
+        checkPokeIdLength();
 
         // add pokemon Name
         $('.pokeName').html(pokeObject.name);
+
+        // add pokeData
+        var newTRow = $('<tr>')
+        var pokeWeight = $('<td>').text('height: ' + pokeObject.height);
+        var pokeHeight = $('<td>').text('weight: ' + pokeObject.weight);
+        newTRow.append(pokeWeight, pokeHeight);
+        $('.pokeDataTable').append(newTRow);
+    }
+
+    // if the Id is longer than 3 digits,
+    // decrease font size so it fits in the div
+    var checkPokeIdLength = function() {
+        var idNum = $('.pokeId').html();
+        if( idNum.length > 3) {
+            $('.pokeId').css('font-size', '1em');
+        } else {
+            $('.pokeId').css('font-size', '1.3em');
+        }
+    }
+
+    // if there are no search results
+    // update the dex to represent this
+    var noResults = function() {
+        var undefinedImage = $("<img>")
+        undefinedImage.addClass('pokeImage');
+        undefinedImage.attr('src', 'images/undefined-psyduck.gif');
+        $('.main-screen').html(undefinedImage);
+
+        $('.pokeName').html("No Results Found");
     }
 
     
